@@ -31,4 +31,4 @@ Belarusian State Pedagogical University named after M. Tank, 2007 - 2012
 
 A1
 
-At the moment I am learning the language on my own
+At the moment I am learning the language on my own.
