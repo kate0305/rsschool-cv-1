@@ -25,7 +25,7 @@ My goal is to become a front-end developer.
 
 Teacher
 
-Belarusian State Pedagogical University named after M. Tank, 2007 - 2012
+Belarusian State Pedagogical University named after M. Tank 2007 - 2012
 
 ### **English:**
 
