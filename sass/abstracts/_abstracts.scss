@@ -1,0 +1,68 @@
+//constants
+$color-background-dark: #2d303a;
+$color-background-light: #f2f2f2;
+$color-background: #f06c64;
+$color-arrow: #e94348;
+$color-background-slide: #648bf0;
+$color-heading: #666d89;
+$color-text: #767e9e;
+$color-logo: #ffffff;
+$color-tag: #dedede;
+$color-hamburger: #173A56;
+
+$content-width: 1020px;
+
+$tablet-width: 768px;
+$mobile-width: 375px;
+$small-width: 320px;
+
+//placeholders
+%font {
+  font-family: "Lato", Verdana, sans-serif;
+}
+
+//mixin
+@mixin icon ($background-image, $display: inline-flex, $align-items: flex-start, $width: 60px, $height: 60px) {
+  display: $display;
+  align-items: $align-items;
+  background-image: $background-image;
+  width: $width;
+  height: $height;
+}
+@mixin font($size, $height, $weight, $style: normal) {
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+}
+@mixin columns($width) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > * {
+    flex-basis: $width;
+  }
+}
+@mixin tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+@mixin small {
+  @media (max-width: $small-width) {
+    @content;
+  }
+}
+@mixin media($background-image, $background-repeat: no-repeat, $display: inline-flex, $align-items: flex-start, $width: 32px, $height: 33px) {
+  background-image: $background-image;
+  background-repeat: $background-repeat;
+  display: $display;
+  align-items: $align-items;
+  width: $width;
+  height: $height;
+}
