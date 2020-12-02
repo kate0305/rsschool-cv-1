@@ -1,10 +1,3 @@
-.services__wrapper {
-    //padding: 59px 800px 14px 40px;
-    // @include tablet {
-    //   padding: 39px 41px 64px 42px;;
-    //justify-content: space-between;
-    //}
-  }
   .services__header {
     padding: 59px 40px 0;
     @include tablet {
@@ -17,9 +10,6 @@
   }
   h2 {
     padding-bottom: 18px;
-  }
-  .section__description {
-
   }
   .services__list {
     @include columns(300px);
