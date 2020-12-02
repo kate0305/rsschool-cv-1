@@ -1,0 +1,51 @@
+.portfolio__header {
+    padding: 59px 40px 0;
+    @include mobile {
+      padding: 42px 30px 0;
+    }
+  }
+  
+  .portfolio__image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 40px 68px 40px;
+    img:nth-child(1n + 13) {
+      display: none;
+    }
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 1fr 1fr;
+      img:nth-child(1n + 9) {
+        display: none;
+      }
+      gap: 13px;
+      padding: 0 30px 42px;
+    }
+  }
+  .portfolio__image_image {
+    width: 100%;
+  }
+  
+  .portfolio__tags {
+    padding: 18px 0 25px 40px;
+    > * {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+    @include mobile {
+      padding-left: 31px;
+    }
+  }
+  .tag {
+    padding: 2px 4px;
+    border: 1px solid #767e9e;
+    box-sizing: border-box;
+    border-radius: 5px;
+    &:hover {
+      color: $color-tag;
+      border: 1px solid #dedede;
+    }
+  }
