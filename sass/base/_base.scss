@@ -8,9 +8,6 @@ h1 {
   color: $color-logo;
   @include mobile {
     display: flex;
-    //align-items: center;
-    //justify-content: center;
-    //padding: 0 135px 0 148px;
   }
 }
 .header__navigation {
@@ -51,9 +48,7 @@ h3 {
   @include font(1.3rem, 3rem, 700);
   color: $color-text;
   vertical-align: text-bottom;
-  //margin: 0;
   @include mobile {
-    //max-width: 315px;
     display: none;
   }
 }
