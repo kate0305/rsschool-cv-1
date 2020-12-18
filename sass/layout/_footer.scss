@@ -1,0 +1,39 @@
+.footer {
+    background: $color-background-dark;
+    padding: 22px 42px 22px 40px;
+    display: flex;
+    @include mobile {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .footer__wrapper {
+    display: flex;
+    width: 938px;
+    justify-content: space-between;
+  }
+  
+  .social-media-icons {
+    list-style: none;
+    display: flex;
+    > * {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+    @include mobile {
+      padding: 22px 111px;
+    }
+  }
+  
+  .facebook {
+    @include media(url("../assets/img/icons/ico-facebook.svg"));
+  }
+  .google {
+    @include media(url("../assets/img/icons/ico-google-plus.svg"));
+  }
+  .twitter {
+    @include media(url("../assets/img/icons/ico-twitter.svg"));
+  }
+  .linkedin {
+    @include media(url("../assets/img/icons/ico-linkedin.svg"));
+  }

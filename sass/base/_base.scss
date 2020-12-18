@@ -1,0 +1,54 @@
+html {
+  font-size: 10px;
+  @extend %font;
+}
+h1 {
+  @include font(2.5rem, 3rem, 700);
+  letter-spacing: -0.03em;
+  color: $color-logo;
+  @include mobile {
+    display: flex;
+  }
+}
+.header__navigation {
+  @include font(1.2rem, 1.4rem, bold);
+  letter-spacing: -0.035em;
+  color: $color-logo;
+  @include mobile {
+    display: none;
+  }
+}
+h2 {
+  @include font(3rem, 3.6rem, 900);
+  color: $color-heading;
+}
+.section__description {
+  @include font(1.8rem, 3rem, 300);
+  color: $color-text;
+  letter-spacing: 0.2px;
+}
+h3 {
+  @include font(1.8rem, 1.8rem, 900);
+  color: $color-heading;
+  margin-bottom: 7px;
+}
+.service__type_description {
+  @include font(1.2rem, 2.2rem, 500);
+  text-align: justify;
+  color: $color-text;
+  @include mobile {
+    letter-spacing: 0.2px;
+  }
+}
+.portfolio__tags {
+  @include font(1.2rem, 1.2rem, normal);
+  color: $color-text;
+}
+.copyright {
+  @include font(1.3rem, 3rem, 700);
+  color: $color-text;
+  vertical-align: text-bottom;
+  @include mobile {
+    display: none;
+  }
+}
