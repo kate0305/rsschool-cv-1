@@ -1,0 +1,85 @@
+:root {
+    --base-color: #99c1dd;
+    --border-color: #ffffff;
+    --text-color: #ffffff;
+    --spacing: 0px;
+    --blur: 0px;
+    --hue-rotate: 0deg;
+    --invert: 0%;
+    --opacity: 100%;
+    --saturate: 100%;
+    --sepia: 0%;
+  }
+
+  body {
+    background: var(--base-color);
+    color: var(--text-color);
+  }
+
+  img {
+    border: var(--spacing) solid var(--border-color);
+    filter: blur(var(--blur)) hue-rotate(var(--hue-rotate)) invert(var(--invert)) opacity(var(--opacity)) saturate(var(--saturate)) sepia(var(--sepia));
+  }
+
+  /*
+    misc styles, nothing to do with CSS variables
+  */
+
+  body {
+    text-align: center;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .title {
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .wrapper {
+    display: flex;
+    box-sizing: border-box;
+}
+
+  .controls {
+    width: 30%;
+    height: 100vh;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .image {
+    width: 70%;
+    height: 100vh;
+    padding-left: 10px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  label {
+    line-height: 50px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .controls {
+      width: 20%;
+      font-size: 15px;
+    }
+    .image {
+      width: 80%;
+    }
+    label {
+      line-height: 30px;
+    }
+  }
+
+  
