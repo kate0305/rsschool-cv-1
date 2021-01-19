@@ -13,14 +13,14 @@ function numberPress(number) {
         display.value = number;
     } else {
         display.value += number;
-        };
-    };
+    }
+}
 
 function operationPress(op) {
     localOperationMemory = display.value;
         
-    if (memoryNewNumber && memoryPendingOperation !== '=') {
-        display.value = memoryCurrentNumber;
+    if (op && memoryNewNumber) {
+        memoryPendingOperation = op;
     } else {
         memoryNewNumber = true;
         switch (memoryPendingOperation) {
@@ -38,37 +38,35 @@ function operationPress(op) {
             break;  
             default:
             memoryCurrentNumber = +localOperationMemory;  
-        };
+        }
             display.value = +(memoryCurrentNumber.toFixed(9));
             memoryPendingOperation = op;
-    };       
-};
+    }       
+}
 
 function decimal() {
     let localDecimalMemory = display.value;
         
-    if (MemoryNewNumber) {
+    if (memoryNewNumber) {
         localDecimalMemory = '0.';
-        MemoryNewNumber = false;
-    } else {
-        if (localDecimalMemory.indexOf('.') === -1) {
+        memoryNewNumber = false;
+    } else if (localDecimalMemory.indexOf('.') === -1) {
             localDecimalMemory += '.'
-        }
-    };
-        display.value = localDecimalMemory;
-};
+    }
+    display.value = localDecimalMemory;
+}
 
 function clear(id) {
     if (id === 'ce') {
         display.value = '0' 
-        MemoryNewNumber = true;
+        memoryNewNumber = true;
     } else if(id === 'c') {
         display.value = '0' 
-        MemoryNewNumber = true;
-        MemoryCurrentNumber = 0,
-        MemoryPendingOperation = '';
-    };
-};
+        memoryNewNumber = true;
+        memoryCurrentNumber = 0,
+        memoryPendingOperation = '';
+    }
+}
 
 buttons.forEach(button => button.addEventListener('click', e => {
     const className = e.target.className;
