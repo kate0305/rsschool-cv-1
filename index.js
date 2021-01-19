@@ -1,5 +1,5 @@
 const display = document.getElementById('display');
-const buttons = document.querySelectorAll('.calc__buttons');
+const buttons = document.querySelector('.calc__buttons');
 
 let memoryCurrentNumber = 0;
 let memoryNewNumber = false;
@@ -68,18 +68,20 @@ function clear(id) {
     }
 }
 
-buttons.forEach(button => button.addEventListener('click', e => {
+buttons.addEventListener('click', e => {
     const className = e.target.className;
+    const value = e.target.textContent;
+    
     if (!e.target.matches('button')) {
         return;
     }
     else if (className === 'button button_number') {
-        numberPress(e.target.textContent);
+        numberPress(value);
     } else if (className === 'button button_operator') {
-        operationPress(e.target.textContent);
+        operationPress(value);
     } else if (className === 'button button_clear') {
-        clear(e.target.textContent);
+        clear(value);
     } else if (className === 'button button_point') {
-        decimal(e.target.textContent);
+        decimal(value);
     }
-}));
+});
