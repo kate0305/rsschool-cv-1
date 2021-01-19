@@ -1,12 +1,9 @@
-let numbers = document.querySelectorAll('.button_number'),
-    operations = document.querySelectorAll('.button_operator'),
-    clearButtons = document.querySelectorAll('.button_clear'),
-    decimalButton = document.getElementById('decimal'),
-    result = document.getElementById('result'),
-    display = document.getElementById('display'),
-    MemoryCurrentNumber = 0,
-    MemoryNewNumber = false,
-    MemoryPendingOperation = '';
+const display = document.getElementById('display');
+const buttons = document.querySelectorAll('.calc__buttons');
+
+let memoryCurrentNumber = 0;
+let memoryNewNumber = false;
+let memoryPendingOperation = '';
 
 
 for(let i = 0; i < numbers.length; i++) {
