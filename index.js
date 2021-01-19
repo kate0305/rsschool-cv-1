@@ -19,28 +19,28 @@ function numberPress(number) {
 function operationPress(op) {
     localOperationMemory = display.value;
         
-    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
-        display.value = MemoryCurrentNumber;
+    if (memoryNewNumber && memoryPendingOperation !== '=') {
+        display.value = memoryCurrentNumber;
     } else {
-        MemoryNewNumber = true;
-        switch (MemoryPendingOperation) {
+        memoryNewNumber = true;
+        switch (memoryPendingOperation) {
             case '+':
-            MemoryCurrentNumber += +localOperationMemory;  
+            memoryCurrentNumber += +localOperationMemory;  
             break;
             case  '-':
-            MemoryCurrentNumber -= +localOperationMemory;
+            memoryCurrentNumber -= +localOperationMemory;
             break;  
             case '*' :
-            MemoryCurrentNumber *= +localOperationMemory;
+            memoryCurrentNumber *= +localOperationMemory;
             break;  
             case '/' :
-            MemoryCurrentNumber /= +localOperationMemory;
+            memoryCurrentNumber /= +localOperationMemory;
             break;  
             default:
-            MemoryCurrentNumber = +localOperationMemory;  
+            memoryCurrentNumber = +localOperationMemory;  
         };
-            display.value = MemoryCurrentNumber;
-            MemoryPendingOperation = op;
+            display.value = +(memoryCurrentNumber.toFixed(9));
+            memoryPendingOperation = op;
     };       
 };
 
