@@ -5,42 +5,16 @@ let memoryCurrentNumber = 0;
 let memoryNewNumber = false;
 let memoryPendingOperation = '';
 
-
-for(let i = 0; i < numbers.length; i++) {
-    let number = numbers[i];
-    number.addEventListener('click', (e) => {
-           numberPress(e.target.textContent);
-    });
-};
-
-for(let i = 0; i < operations.length; i++) {
-    let operationButton = operations[i];
-        operationButton.addEventListener('click', (e) => {
-        operationPress(e.target.textContent);
-    });
-};
-
-for(let i = 0; i < clearButtons.length; i++) {
-    let resetButton = clearButtons[i];
-        resetButton.addEventListener('click', (e) => {
-        clear(e.target.textContent);
-    });
-};
-
-decimalButton.addEventListener('click', decimal);
-
 function numberPress(number) {
-    if (MemoryNewNumber) {
+    if (memoryNewNumber) {
         display.value = number;
-        MemoryNewNumber = false;
+        memoryNewNumber = false;
+    } else if (display.value === '0') {
+        display.value = number;
     } else {
-        if (display.value === '0') {
-            display.value = number;
-        } else {
-            display.value += number;
+        display.value += number;
         };
     };
-};
 
 function operationPress(op) {
     localOperationMemory = display.value;
@@ -95,3 +69,19 @@ function clear(id) {
         MemoryPendingOperation = '';
     };
 };
+
+buttons.forEach(button => button.addEventListener('click', e => {
+    const className = e.target.className;
+    if (!e.target.matches('button')) {
+        return;
+    }
+    else if (className === 'button button_number') {
+        numberPress(e.target.textContent);
+    } else if (className === 'button button_operator') {
+        operationPress(e.target.textContent);
+    } else if (className === 'button button_clear') {
+        clear(e.target.textContent);
+    } else if (className === 'button button_point') {
+        decimal(e.target.textContent);
+    }
+}));
