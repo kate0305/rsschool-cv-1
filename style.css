@@ -24,14 +24,14 @@ video {
   display: flex;
   align-items: flex-start;
   margin: 10px;
-  border-radius: 50px;
+  border-radius: 5px;
   box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
   overflow: hidden;
 }
   
 .speed-bar {
   width: 100%;
-  background: linear-gradient(-170deg, #2376ae 0%, #c16ecf 100%);
+  background: linear-gradient(-170deg, ##a0ae23 0%, #6ecf7b 100%);
   text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
