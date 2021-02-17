@@ -19,9 +19,9 @@ function addZero(n) {
 timeDisplay.textContent = `${addZero(Math.floor(fakeDuration / 60))}:${addZero(Math.floor(fakeDuration % 60))}`;
 
 sounds.forEach(sound => {
-  sound.addEventListener('click', function() {
-    song.src = this.getAttribute('data-sound');
-    video.src = this.getAttribute('data-video');
+  sound.addEventListener('click', (e) => {
+    song.src = e.currentTarget.getAttribute('data-sound');
+    video.src = e.currentTarget.getAttribute('data-video');
     checkPlaying(song);
   });
 });
@@ -37,8 +37,11 @@ replay.addEventListener('click', () => {
 const restartSong = song => song.currentTime = 0;
 
 timeSelect.forEach(option => {
-  option.addEventListener('click', function() {
-    fakeDuration = this.getAttribute('data-time');
+  option.addEventListener('click', (e) => {
+    timeSelect.forEach(time => time.classList.remove('active'));
+    e.target.classList.add('active');
+    restartSong(song);
+    fakeDuration = e.currentTarget.getAttribute('data-time');
     timeDisplay.textContent = `${addZero(Math.floor(fakeDuration / 60))}:${addZero(Math.floor(fakeDuration % 60))}`;
   });
 });
