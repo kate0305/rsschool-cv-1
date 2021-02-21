@@ -13,7 +13,6 @@ ctx.lineCap = 'round';
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
-let direction = true;
 
 function draw(e) {
   if (!isDrawing) return; 
