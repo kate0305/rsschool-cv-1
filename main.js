@@ -1,7 +1,8 @@
 const panels = document.querySelectorAll('.panel');
 
 function toggleOpen() {
-  this.classList.toggle('open');
+  panels.forEach(panel => panel.classList.remove("open"));
+  this.classList.add("open");
 }
 
 function toggleActive(e) {
@@ -10,5 +11,7 @@ function toggleActive(e) {
   }
 }
 
-panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+panels.forEach (panel => {
+  panel.addEventListener ('click', toggleOpen);
+  panel.addEventListener ('transitionend', toggleActive);
+});
