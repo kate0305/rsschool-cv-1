@@ -30,21 +30,25 @@
     font-family: 'helvetica neue', sans-serif;
     font-weight: bold;
     font-size: 20px;
+    margin: 0;
   }
 
   .title {
     text-transform: uppercase;
     color: white;
+    margin: 0;
+    padding: 0;
+    height: 10vh;
   }
 
   .wrapper {
     display: flex;
     box-sizing: border-box;
+    height: 90vh;
 }
 
   .controls {
     width: 30%;
-    height: 100vh;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
@@ -56,9 +60,7 @@
 
   .image {
     width: 70%;
-    height: 100vh;
     padding-left: 10px;
-    overflow: auto;
     display: flex;
     align-items: center;
     justify-content: center;
